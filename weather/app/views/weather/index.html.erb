@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather</title>
+	<h1>World Weather</h1>
+</head>
+<body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	</script>
+
+<%= form_tag("/", method: "post") do %>
+  <%= label_tag(:city, "Enter City Name:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag(:submit, "Get Weather") %>
+<% end %>
+
+<script class="weather" type="text/template">
+    <div class='stats'>
+    	<p>{{city}} 	{{temp}}</p>
+    </div>
+  </script>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://learn.themakersquare.com/materials/vendor/jquery.riot.js"></script>
+<script src="http://learn.themakersquare.com/materials/week-7/weather-icons.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+
+
+  $("#submit").on('click', function (e) {
+    e.preventDefault();
+  	
+  	var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q={{city}}&mode=json&units=imperial";
+    
+    console.log('Fetching weather...');
+
+  
+  });
+
+
+
+
+</script>
+
+
+	
+</body>
+</html>
